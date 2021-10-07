@@ -1,51 +1,45 @@
 package co.uniquindio.prog2.biblioteca.model;
 
 public class Bibliotecario {
-
+	
 	/**
 	 * Este atributo representa al nombre del Bibliotecario
 	 */
 	private String nombre;
-
+	
 	/**
 	 * Este atributo representa a la identificacioon del Bibliotecario
 	 */
 	private String identificacion;
-
+	
 	/**
 	 * Este atributo representa la direccion del Bibliotecario
 	 */
 	private String direccion;
-
+	
 	/**
 	 * Este atributo representa el telefono del Bibliotecario
 	 */
 	private String telefono;
 	/**
-	 * Este atributo representa los años de servicio del bibliotecario
+	 * Este atributo representa los añois de experiencia del Bibliotecario
 	 */
-	private String añosServicio;
-
-
+	private int aniosExp;
+	
 	/**
-	 * Metodo constructor que permite inicializar la clase Bibliotecario con sus
-	 * atributos
-	 * 
-	 * @param nombre         Este parametro representa al nombre del Bibliotecario
-	 * @param identificacion Este parametro representa a la identificacioon del
-	 *                       Bibliotecario
-	 * @param direccion      Este parametro representa la direccion del
-	 *                       Bibliotecario
-	 * @param telefono       Este parametro representa el telefono del Bibliotecario
+	 * Metodo constructor que permite inicializar la clase Bibliotecario con sus atributos
+	 * @param nombre Este parametro representa al nombre del Bibliotecario
+	 * @param identificacion Este parametro representa a la identificacioon del Bibliotecario
+	 * @param direccion Este parametro representa la direccion del Bibliotecario
+	 * @param telefono Este parametro representa el telefono del Bibliotecario
 	 */
-	public Bibliotecario(String nombre, String identificacion, String direccion, String telefono, String añosServicio) {
+	public Bibliotecario(String nombre, String identificacion, String direccion, String telefono, int aniosExp) {
 		super();
 		this.nombre = nombre;
 		this.identificacion = identificacion;
 		this.direccion = direccion;
 		this.telefono = telefono;
-		this.añosServicio = añosServicio;
-		
+		this.aniosExp = aniosExp;
 	}
 
 	public String getNombre() {
@@ -79,20 +73,20 @@ public class Bibliotecario {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	
-	public String getAñosServicio() {
-		return añosServicio;
-	}
-	
-	public void setAñosServicio(String añosServicio) {
-		this.añosServicio = añosServicio;
+	public int getaniosExp() {
+		return aniosExp;
 	}
 
+	public void setTaniosExp(int aniosExp) {
+		this.aniosExp = aniosExp;
+	}
 
 	@Override
 	public String toString() {
 		return "Bibliotecario [nombre=" + nombre + ", identificacion=" + identificacion + ", direccion=" + direccion
-				+ ", telefono=" + telefono + ", añosServicio=" + añosServicio +" ]";
+				+ ", telefono=" + telefono + ", aniosExp="+ aniosExp +"]";
 	}
+	
+	
 
 }

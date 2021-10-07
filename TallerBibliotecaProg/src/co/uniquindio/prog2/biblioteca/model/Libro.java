@@ -1,6 +1,7 @@
 package co.uniquindio.prog2.biblioteca.model;
 
 public class Libro {
+	
 
 	// DECLARACION DE ATRIBUTOS
 	private String codigo;
@@ -12,10 +13,14 @@ public class Libro {
 	private String estado;
 	private String fechaPublicacion;
 	private int cantidadDisponible;
+	private int precioPrestamo;
+
+
+
+
 
 	/**
 	 * Este es el metodo constructor de la clase libro
-	 * 
 	 * @param codigo
 	 * @param isbn
 	 * @param titulo
@@ -27,7 +32,7 @@ public class Libro {
 	 * @param cantidadDisponible
 	 */
 	public Libro(String codigo, String isbn, String titulo, String autor, int numeroPaginas, String editorial,
-			String estado, String fechaPublicacion, int cantidadDisponible) {
+			String estado, String fechaPublicacion, int cantidadDisponible, int precioPrestamo) {
 		super();
 		this.codigo = codigo;
 		this.isbn = isbn;
@@ -38,39 +43,49 @@ public class Libro {
 		this.estado = estado;
 		this.fechaPublicacion = fechaPublicacion;
 		this.cantidadDisponible = cantidadDisponible;
+		this.precioPrestamo = precioPrestamo;
 	}
+
 
 	public String getCodigo() {
 		return codigo;
 	}
 
+
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+
 
 	public String getIsbn() {
 		return isbn;
 	}
 
+
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+
 
 	public String getTitulo() {
 		return titulo;
 	}
 
+
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+
 
 	public String getAutor() {
 		return autor;
 	}
 
+
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
+
 
 	public int getNumeroPaginas() {
 		return numeroPaginas;
@@ -80,9 +95,11 @@ public class Libro {
 		this.numeroPaginas = numeroPaginas;
 	}
 
+
 	public String getEditorial() {
 		return editorial;
 	}
+
 
 	public void setEditorial(String editorial) {
 		this.editorial = editorial;
@@ -92,25 +109,33 @@ public class Libro {
 		return estado;
 	}
 
+
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
 
 	public String getFechaPublicacion() {
 		return fechaPublicacion;
 	}
 
+
 	public void setFechaPublicacion(String fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
 	}
-
 	public int getCantidadDisponible() {
 		return cantidadDisponible;
 	}
-
 	public void setCantidadDisponible(int cantidadDisponible) {
 		this.cantidadDisponible = cantidadDisponible;
 	}
+	public int getPrecioPrestamo() {
+		return precioPrestamo;
+	}
+	public void setprecioPrestamo(int precioPrestamo) {
+		this.precioPrestamo = precioPrestamo;
+	}
+
 
 	@Override
 	public String toString() {
@@ -119,23 +144,25 @@ public class Libro {
 				+ ", fechaPublicacion=" + fechaPublicacion + ", cantidadDisponible=" + cantidadDisponible + "]";
 	}
 
+
 	public boolean verificarRango() {
 
-		if (getCantidadDisponible() > 10 && getCantidadDisponible() <= 20) {
+		if(getCantidadDisponible() > 10 && getCantidadDisponible() <= 20) {
 			return true;
 		}
 		return false;
 	}
+	
 
-	// 1.0 Consultar la cantidad de libros de la editorial “Uniquindio”
-	// que han sido prestados en la biblioteca y su título empiece por una vocal.
+	//1.0 Consultar la cantidad de libros de la editorial “Uniquindio”
+		//que han sido prestados  en la biblioteca y su título empiece por una vocal.
 	public boolean verificarEditorialLetraVocal(String editorial) {
 		char letra = titulo.charAt(0);
 		boolean iniciaVocal = false;
 
 		iniciaVocal = esVocal(letra);
 
-		if (iniciaVocal == true && this.editorial.equalsIgnoreCase(editorial)) {
+		if(iniciaVocal == true && this.editorial.equalsIgnoreCase(editorial)){
 			return true;
 		}
 		return false;
@@ -143,10 +170,11 @@ public class Libro {
 
 	private boolean esVocal(char letra) {
 		letra = Character.toLowerCase(letra);
-		if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+		if(letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u'){
 			return true;
 		}
 		return false;
 	}
+	
 
 }
